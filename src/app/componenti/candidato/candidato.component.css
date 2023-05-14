@@ -1,0 +1,12 @@
+.note-card-header {
+    background-color: #3F51B5;
+    padding: 16px;
+}
+
+.note-card-subtitle {
+    color: white;
+}
+
+.note-card-content {
+    margin-top: 10px;
+}
