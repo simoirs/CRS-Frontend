@@ -1,15 +1,16 @@
-.container {
-  display: flex;
-  flex-flow: row wrap;
-}
-
 tr.mat-mdc-row:hover {
     background-color: rgb(146, 184, 185);
 }
 
 .candidati-table {
     width: 50%;
-    padding: 10px;
+    margin-top: 10px;
+    background-color: cadetblue;
+}
+
+
+.aggiungi-button {
+  margin-top: 10px;
 }
 
 .note-candidato {

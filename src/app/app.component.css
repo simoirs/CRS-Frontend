@@ -1,1 +1,6 @@
-
+.app-container {
+    background-color: hsl(0, 40%, 98%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

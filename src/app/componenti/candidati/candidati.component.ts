@@ -4,6 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CandidatiService } from 'src/app/servizi/candidati.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { MatDialog } from '@angular/material/dialog';
+import { FormAggiungiCandidatoComponent } from '../form-aggiungi-candidato/form-aggiungi-candidato.component';
 
 export interface Candidato {
   id: string;
@@ -34,11 +36,17 @@ export class CandidatiComponent {
   dataSource: any;
   mostraDettagli = false;
 
-  constructor(private candidatiService: CandidatiService) {
+  
+
+  constructor(private candidatiService: CandidatiService, private _dialog: MatDialog) {
+    
+  }
+
+  aggiungiCandidato() {
+    this._dialog.open(FormAggiungiCandidatoComponent);
   }
 
   ngOnInit() {
-    console.log('OnInit candidatiComponent - Chiamata a candidatiService.getCandidati()')
     this.candidatiService.getCandidati()
       .subscribe({
         next: (data) => {

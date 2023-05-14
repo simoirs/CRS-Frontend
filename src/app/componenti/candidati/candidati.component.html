@@ -1,6 +1,9 @@
-<div class="container">
+<div class="table-container">
+  <div class="">
+    <button class="btn btn-primary aggiungi-button" (click)="aggiungiCandidato()">Aggiungi</button>
+  </div>
   <div class="candidati-table">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!--  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> Id </th>
@@ -41,10 +44,10 @@
     <a routerLink="candidato">
       <tr mat-row *matRowDef="let row; columns: colonne;" (click)="onClick(row, $event)"></tr>
     </a>
-  </table>
+  </table>-->
+  
 
-
-    <!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z2">
       <ng-container [matColumnDef]="colonna" *ngFor="let colonna of colonne">
         <th mat-header-cell *matHeaderCellDef> {{colonna}} </th>
         <td mat-cell *matCellDef="let element"> {{element[colonna]}} </td>
@@ -54,12 +57,12 @@
       <a routerLink="candidato">
         <tr mat-row *matRowDef="let row; columns: colonne;" (click)="onClick(row, $event)"></tr>
       </a>
-    </table>-->
+    </table>
   </div>
 
   <div *ngIf="mostraDettagli" class="note-candidato">
     <app-candidato></app-candidato>
   </div>
-
 </div>
+
 <router-outlet></router-outlet>
