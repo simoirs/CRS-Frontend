@@ -36,7 +36,7 @@ export class CandidatiComponent {
   dataSource: any;
   mostraDettagli = false;
 
-  
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private candidatiService: CandidatiService, private _dialog: MatDialog) {
     
@@ -50,11 +50,17 @@ export class CandidatiComponent {
     this.candidatiService.getCandidati()
       .subscribe({
         next: (data) => {
-          this.dataSource = data;
-          console.log(data);
+          this.dataSource = new MatTableDataSource(data);
+          this.dataSource.paginator = this.paginator;
+          console.log(this.dataSource);
         },
         error: (e) => console.error(e)
       });
+  }
+
+  ngAfterViewInit() {
+    console.log("Dentro ngAfterViewInit");
+    console.log("Datasource is: ", this.dataSource);
   }
 
   onClick(row: any, event: any) {

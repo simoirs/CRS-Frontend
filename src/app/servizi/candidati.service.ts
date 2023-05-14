@@ -19,7 +19,7 @@ export class CandidatiService {
 
 
   getCandidati() {
-    var chiamata = this.http.get<Candidato>(this.baseURL);
+    var chiamata = this.http.get<Candidato[]>(this.baseURL);
     console.log(chiamata);
     return chiamata;
   }
