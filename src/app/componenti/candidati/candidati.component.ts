@@ -32,7 +32,7 @@ export interface Candidato {
 })
 export class CandidatiComponent {
 
-  colonne: string[] = ['id', 'nome', 'cognome', 'email', 'telefono', 'posizione', 'valutazione'];
+  colonne: string[] = ['nome', 'cognome', 'email', 'telefono', 'posizione', 'valutazione'];
   dataSource: any;
   mostraDettagli = false;
 

@@ -1,5 +1,13 @@
+.positive {
+  background-color: rgb(117, 224, 122);
+}
+
+.negative {
+  background-color: rgb(238, 127, 127);
+}
+
 tr.mat-mdc-row:hover {
-    background-color: rgb(146, 184, 185);
+    background-color: hsl(0, 40%, 98%);
 }
 
 .candidati-table {
@@ -8,15 +16,23 @@ tr.mat-mdc-row:hover {
     background-color: cadetblue;
 }
 
-
 .aggiungi-button {
   margin-top: 10px;
 }
 
 .note-candidato {
-  
   width: 40%;
   margin-left: 10px;
   padding: 10px;
+}
+
+.valutazione-wrapper {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(0, 40%, 98%);
+  border-radius: 10px;
+  width: 50px;
 }
 
