@@ -34,6 +34,8 @@ export interface Candidato {
 export class CandidatiComponent {
 
   colonne: string[] = ['id', 'nome', 'cognome', 'email', 'telefono', 'posizione', 'valutazione'];
+  colonneEspandi = [...this.colonne, 'expand'];
+  expandedElement: any;
   dataSource: MatTableDataSource<any>;
   mostraDettagli = false;
   
