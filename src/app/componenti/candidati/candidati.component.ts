@@ -1,11 +1,12 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CandidatiService } from 'src/app/servizi/candidati.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MatDialog } from '@angular/material/dialog';
 import { FormAggiungiCandidatoComponent } from '../form-aggiungi-candidato/form-aggiungi-candidato.component';
+
 
 export interface Candidato {
   id: string;
@@ -32,36 +33,41 @@ export interface Candidato {
 })
 export class CandidatiComponent {
 
-  colonne: string[] = ['nome', 'cognome', 'email', 'telefono', 'posizione', 'valutazione'];
-  dataSource: any;
+  colonne: string[] = ['id', 'nome', 'cognome', 'email', 'telefono', 'posizione', 'valutazione'];
+  dataSource: MatTableDataSource<any>;
   mostraDettagli = false;
+  
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private candidatiService: CandidatiService, private _dialog: MatDialog) {
-    
-  }
-
-  aggiungiCandidato() {
-    this._dialog.open(FormAggiungiCandidatoComponent);
-  }
-
-  ngOnInit() {
     this.candidatiService.getCandidati()
       .subscribe({
         next: (data) => {
           this.dataSource = new MatTableDataSource(data);
           this.dataSource.paginator = this.paginator;
-          console.log(this.dataSource);
+          console.log("Pre: ", this.dataSource.sort);
+          this.dataSource.sort = this.sort;
+          console.log("Post: ", this.dataSource.sort);
         },
         error: (e) => console.error(e)
       });
   }
 
-  ngAfterViewInit() {
-    console.log("Dentro ngAfterViewInit");
-    console.log("Datasource is: ", this.dataSource);
+
+  aggiungiCandidato() {
+    this._dialog.open(FormAggiungiCandidatoComponent);
   }
+
+  apriEditForm(candidato: any) {
+
+  }
+
+  cancellaCandidato(id: number) {
+
+  }
+
 
   onClick(row: any, event: any) {
     console.log(row, event);
@@ -73,6 +79,10 @@ export class CandidatiComponent {
     this.candidatiService.onCandidatoClick(row);
   }
 
+  
+  
+
+  
 
 }
 

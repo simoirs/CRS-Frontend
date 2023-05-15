@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -49,7 +50,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatInputModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
