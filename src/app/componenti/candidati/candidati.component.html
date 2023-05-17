@@ -3,8 +3,8 @@
     <button class="btn btn-primary aggiungi-button" (click)="aggiungiCandidato()">Aggiungi</button>
   </div>
   <div class="candidati-table">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort multiTemplateDataRows>
 
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort multiTemplateDataRows>
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
@@ -61,8 +61,12 @@
 
       <ng-container matColumnDef="expandedDetail">
         <td mat-cell *matCellDef="let candidato" [attr.colspan]="colonneEspandi.length">
-          <div class="example-element-detail" [@detailExpand]="candidato == expandedElement ? 'expanded' : 'collapsed'">
-            {{candidato.note}}
+          <div class="example-element-detail sfondo-grigio" [@detailExpand]="candidato == expandedElement ? 'expanded' : 'collapsed'">
+            {{candidato.note}} 
+            <div class="candidato-actions">
+              <p class="negative-text action-modifica sfondo-bianco testo-azzurro">Modifica</p>
+              <p class="negative-text action-cancella sfondo-bianco testo-azzurro">Cancella</p>
+            </div>
           </div>
         </td>
       </ng-container>

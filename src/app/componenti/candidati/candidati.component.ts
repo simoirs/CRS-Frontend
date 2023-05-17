@@ -33,7 +33,7 @@ export interface Candidato {
 })
 export class CandidatiComponent {
 
-  colonne: string[] = ['id', 'nome', 'cognome', 'email', 'telefono', 'posizione', 'valutazione'];
+  colonne: string[] = ['nome', 'cognome', 'email', 'telefono', 'posizione', 'valutazione'];
   colonneEspandi = [...this.colonne, 'expand'];
   expandedElement: any;
   dataSource: MatTableDataSource<any>;
@@ -72,13 +72,13 @@ export class CandidatiComponent {
 
 
   onClick(row: any, event: any) {
-    console.log(row, event);
+    /*console.log(row, event);
     if (this.mostraDettagli == false) {
       this.mostraDettagli = true;
     } else {
       this.mostraDettagli = false;
     }
-    this.candidatiService.onCandidatoClick(row);
+    this.candidatiService.onCandidatoClick(row);*/
   }
 
   

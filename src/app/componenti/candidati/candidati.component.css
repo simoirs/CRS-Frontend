@@ -6,14 +6,34 @@
   background-color: rgb(238, 127, 127);
 }
 
+.negative-text {
+  color: rgb(238, 127, 127);
+}
+
+.sfondo-grigio {
+  background-color: hsl(0, 40%, 98%);
+}
+
+.sfondo-bianco {
+  background-color: white;
+}
+
+.testo-grigio {
+  color: hsl(0, 40%, 98%);
+}
+
+.testo-azzurro {
+  color: rgb(82, 82, 197);
+}
+
 tr.mat-mdc-row:hover {
     background-color: hsl(0, 40%, 98%);
 }
 
 .candidati-table {
-    width: 100%;
+    width: 80%;
     margin-top: 10px;
-    
+    justify-content: center;
 }
 
 .aggiungi-button {
@@ -57,6 +77,8 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-detail {
   overflow: hidden;
   display: flex;
+  
+  flex-direction: column;
 }
 
 .example-element-diagram {
@@ -80,4 +102,33 @@ tr.example-element-row:not(.example-expanded-row):active {
 
 .example-element-description-attribution {
   opacity: 0.5;
+}
+
+.candidato-actions {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.action-cancella {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  height: 28px;
+  width: 70px; 
+}
+
+.action-modifica {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 2px;
+  height: 28px;
+  width: 70px; 
+}
+
+.modifica-text {
+  color: rgb(80, 80, 192);
 }
